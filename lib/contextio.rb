@@ -346,7 +346,7 @@ module ContextIO
         raise ArgumentError, "missing required argument account", caller
       end
       account = options.delete(:account)
-      put "accounts/#{account}", options
+      post "accounts/#{account}", options
     end
 
     def get_account(options)
@@ -389,7 +389,7 @@ module ContextIO
       if ! options.has_key?(:email_address) then
         raise ArgumentError, "missing required argument account", caller
       end
-      put "accounts/#{account}/email_addresses/#{options[:email_address]}", {:primary => 1}
+      post "accounts/#{account}/email_addresses/#{options[:email_address]}", {:primary => 1}
     end
 
     def add_email_address_to_account(options)
@@ -416,7 +416,7 @@ module ContextIO
       end
       account = options.delete(:account)
       label = URI.escape(options.delete(:label))
-      put "accounts/#{account}/sources/#{label}", options
+      post "accounts/#{account}/sources/#{label}", options
     end
 
     def reset_source_status(options)
@@ -426,7 +426,7 @@ module ContextIO
       if ! options.has_key?(:label) then
         raise ArgumentError, "missing required argument label", caller
       end
-      put "accounts/#{options[:account]}/sources/#{URI.escape options[:label]}", { :status => 1 }
+      post "accounts/#{options[:account]}/sources/#{URI.escape options[:label]}", { :status => 1 }
     end
 
     def list_sources(options)
