@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Gary Haran", "Dominik Gehl"]
-  s.date = %q{2011-07-22}
-  s.email = %q{gary.haran@gmail.com}
+  s.date = %q{2012-08-10}
+  s.email = %q{dominik@context.io}
   s.files = ["lib/contextio.rb", "Rakefile", "README.md", "README.textile"]
   s.homepage = %q{http://context.io/}
   s.require_paths = ["lib"]
