@@ -149,7 +149,10 @@ module ContextIO
       if ! options.has_key?(:file_id) then
         raise ArgumentError, "missing required argument file_id", caller
       end
-      get "accounts/#{options[:account]}/files/#{options[:file_id]}/content"
+      if ! options.has_key?(:as_link) then
+        get "accounts/#{options[:account]}/files/#{options[:file_id]}/content"
+      else
+        get "accounts/#{options[:account]}/files/#{options[:file_id]}/content?as_link=#{options[:as_link]}"
     end
 
     def get_file_changes(options)
