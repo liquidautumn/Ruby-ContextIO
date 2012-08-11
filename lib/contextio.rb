@@ -153,6 +153,7 @@ module ContextIO
         get "accounts/#{options[:account]}/files/#{options[:file_id]}/content"
       else
         get "accounts/#{options[:account]}/files/#{options[:file_id]}/content?as_link=#{options[:as_link]}"
+      end
     end
 
     def get_file_changes(options)
