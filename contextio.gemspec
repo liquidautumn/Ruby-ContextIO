@@ -12,7 +12,8 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://context.io/}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.5.1}
-  s.summary = %q{Provides interface for Context.IO email}
+  s.summary = %q{Provides interface to Context.IO}
+  s.description = %q{Provides Ruby interface to Context.IO}
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
