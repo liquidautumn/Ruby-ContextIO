@@ -1,6 +1,8 @@
 require 'oauth'
 require 'net/http'
 
+warn("WARNING: You're using the contextio gem from the dev_2.0 in an old repository. As of the 31st of July, 2013 this repository may vanish. Please use a released version of the gem (this branch was released as-is as version 0.5.0).")
+
 module ContextIO
   VERSION = "2.0"
 
