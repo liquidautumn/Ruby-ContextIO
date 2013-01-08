@@ -341,6 +341,28 @@ module ContextIO
       end
     end
 
+    def set_message_flags(options)
+      if !options.has_key?(:account) then
+        raise ArgumentError, "missing required argument account", caller
+      end
+
+      account = options.delete(:account)
+      if options.has_key?(:email_message_id) then
+        email_message_id = URI.escape(options.delete(:email_message_id))
+        post "accounts/#{account}/messages/#{email_message_id}/flags", options
+      elsif options.has_key?(:message_id) then
+        message_id = options.delete(:message_id)
+        post "accounts/#{account}/messages/#{message_id}/flags", options
+      elsif options.has_key?(:gmail_message_id) then
+        gmail_message_id = options.delete(:gmail_message_id)
+        if options[:gmail_message_id].start_with?('gm-') then
+          post "accounts/#{account}/messages/#{gmail_message_id}/flags", options
+        else
+          post "accounts/#{account}/messages/gm-#{gmail_message_id}/flags", options
+        end
+      end
+    end
+
     def add_account(options)
       if !options.has_key?(:email) then
         raise ArgumentError, "missing required argument email", caller
