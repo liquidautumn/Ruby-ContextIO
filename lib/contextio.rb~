@@ -363,28 +363,6 @@ module ContextIO
       end
     end
 
-    def add_remove_folders(options)
-      if !options.has_key?(:account) then
-        raise ArgumentError, "missing required argument account", caller
-      end
-
-      account = options.delete(:account)
-      if options.has_key?(:email_message_id) then
-        email_message_id = URI.escape(options.delete(:email_message_id))
-        post "accounts/#{account}/messages/#{email_message_id}/folders", options
-      elsif options.has_key?(:message_id) then
-        message_id = options.delete(:message_id)
-        post "accounts/#{account}/messages/#{message_id}/folders", options
-      elsif options.has_key?(:gmail_message_id) then
-        gmail_message_id = options.delete(:gmail_message_id)
-        if options[:gmail_message_id].start_with?('gm-') then
-          post "accounts/#{account}/messages/#{gmail_message_id}/folders", options
-        else
-          post "accounts/#{account}/messages/gm-#{gmail_message_id}/folders", options
-        end
-      end
-    end
-
     def add_account(options)
       if !options.has_key?(:email) then
         raise ArgumentError, "missing required argument email", caller
