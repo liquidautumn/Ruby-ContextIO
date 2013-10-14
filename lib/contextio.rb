@@ -3,10 +3,10 @@ require 'net/http'
 
 #warn("WARNING: You're using the contextio gem from master in an old repository. As of the 31st of July, 2013 this repository may vanish. Please use a released version of the gem.")
 
-module ContextIO
+module ContextIOld
   VERSION = "2.0"
 
-  class ContextIO::Connection
+  class ContextIOld::Connection
     def initialize(key='', secret='', server='https://api.context.io', options={})
       opts=options.select { |key| ['timeout'].include?(key.to_s) }.merge!(:site => server, :scheme => :header)
       @consumer = OAuth::Consumer.new(key, secret, opts)
@@ -599,9 +599,9 @@ module ContextIO
 
     def url(*args)
       if args.length == 1
-        "/#{ContextIO::VERSION}/#{args[0]}"
+        "/#{ContextIOld::VERSION}/#{args[0]}"
       else
-        "/#{ContextIO::VERSION}/#{args.shift.to_s}?#{parametrize args.last}"
+        "/#{ContextIOld::VERSION}/#{args.shift.to_s}?#{parametrize args.last}"
       end
     end
 
