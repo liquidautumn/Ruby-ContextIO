@@ -1,16 +1,16 @@
-require_relative '../lib/contextio.rb'
+require_relative '../lib/contextiold.rb'
 require 'minitest/autorun'
 require 'mocha'
 require 'ruby-debug'
 
-describe ContextIO::Connection do
+describe ContextIOld::Connection do
   before do
     @key           = ''
     @secret        = ''
     @account       = '.haran@gmail.com'
     @five_days_ago = (Time.now - 24 * 60 * 60 * 5).to_i
 
-    @connection = ContextIO::Connection.new(@key, @secret)
+    @connection = ContextIOld::Connection.new(@key, @secret)
   end
 
   it "should call discovery" do

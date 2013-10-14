@@ -3,8 +3,8 @@ require 'rubygems/specification'
 require 'rake'
 require 'rake/gempackagetask'
 
-GEM = "contextio"
-GEM_VERSION = "0.4.0"
+GEM = "contextio-legacy"
+GEM_VERSION = "0.4.4"
 SUMMARY = "Provides interface for Context.IO email"
 AUTHOR = "Dominik Gehl"
 EMAIL = "dominik@context.io"
