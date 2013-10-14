@@ -1,8 +1,8 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{contextio}
-  s.version = "0.4.1"
+  s.name = %q{contextio-legacy}
+  s.version = "0.4.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Gary Haran", "Dominik Gehl"]
@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.5.1}
   s.summary = %q{Provides interface to Context.IO}
-  s.description = %q{Provides Ruby interface to Context.IO}
+  s.description = %q{Legacy Ruby interface to Context.IO}
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
